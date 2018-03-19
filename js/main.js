@@ -118,7 +118,6 @@ onRenderFcts.push(function (delta) {
 
 var arWorldRoot = smoothedRoot
 
-THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() )
 var MTLLoader = new THREE.MTLLoader()
 MTLLoader.setBaseUrl('data/models/') //设置材质路径
 MTLLoader.setPath('data/models/') //设置mtl文件路径
