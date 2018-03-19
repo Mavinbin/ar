@@ -132,6 +132,7 @@ MTLLoader.load('monu1.mtl', function (materials) {
                 child.material.side = THREE.DoubleSide // 设置贴图模式为双面贴图
             }
         })
+        arWorldRoot.add(obj)
         console.log('3D素材加载成功！')
     })
 })
