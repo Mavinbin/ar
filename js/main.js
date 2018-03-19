@@ -118,6 +118,7 @@ onRenderFcts.push(function (delta) {
 
 var arWorldRoot = smoothedRoot
 
+THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() )
 var MTLLoader = new THREE.MTLLoader()
 MTLLoader.setBaseUrl('data/models/') //设置材质路径
 MTLLoader.setPath('data/models/') //设置mtl文件路径
@@ -132,7 +133,7 @@ MTLLoader.load('monu1.mtl', function (materials) {
                 child.material.side = THREE.DoubleSide // 设置贴图模式为双面贴图
             }
         })
-        arWorldRoot.add(obj)
+        scene.add(obj)
         console.log('3D素材加载成功！')
     })
 })
