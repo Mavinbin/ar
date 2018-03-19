@@ -133,7 +133,14 @@ MTLLoader.load('monu1.mtl', function (materials) {
                 child.material.side = THREE.DoubleSide // 设置贴图模式为双面贴图
             }
         })
+        obj.rotation.x = 0;
+        obj.position.y = -50;
+        obj.position.z = 0;
+        arWorldRoot.add(obj)
         scene.add(obj)
+        onRenderFcts.push(function () {
+            obj.rotation.x += 0.1
+        })
         console.log('3D素材加载成功！')
     })
 })
