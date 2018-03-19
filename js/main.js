@@ -128,7 +128,9 @@ MTLLoader.load('monu1.mtl', function (materials) {
     OBJLoader.setPath('data/models/') // 设置obj文件所在目录
     OBJLoader.load('monu1.obj', function (obj) {
         obj.traverse(function (child) {
-            child.material.side = THREE.DoubleSide // 设置贴图模式为双面贴图
+            if (child instanceof THREE.Mesh) {
+                child.material.side = THREE.DoubleSide // 设置贴图模式为双面贴图
+            }
         })
         console.log('3D素材加载成功！')
     })
