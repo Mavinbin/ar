@@ -6,9 +6,9 @@
 <script src="js/stats.min.js"></script>
 <!-- ar.js -->
 <script src="js/ar.min.js"></script>
-<script>
+<!-- <script>
     THREEx.ArToolkitContext.baseURL = '../'
-</script>
+</script> -->
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
     <div style='position: absolute; top: 10px; width:100%; text-align: center; z-index: 1;'>
@@ -88,7 +88,7 @@
 
         // create atToolkitContext
         var arToolkitContext = new THREEx.ArToolkitContext({
-            cameraParametersUrl: THREEx.ArToolkitContext.baseURL + '../data/data/camera_para.dat',
+            cameraParametersUrl: 'data/camera_para.dat',
             detectionMode: 'mono',
             maxDetectionRate: 30,
             canvasWidth: 80 * 3,
@@ -116,7 +116,7 @@
         scene.add(markerRoot)
         var artoolkitMarker = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
             type: 'pattern',
-            patternUrl: THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro'
+            patternUrl: 'data/patt.hiro'
             // patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji'
         })
 
