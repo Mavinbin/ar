@@ -119,13 +119,13 @@ onRenderFcts.push(function (delta) {
 var arWorldRoot = smoothedRoot
 
 var MTLLoader = new THREE.MTLLoader()
-MTLLoader.setBaseUrl('../data/models/') //设置材质路径
-MTLLoader.setPath('../data/models/') //设置mtl文件路径
+MTLLoader.setBaseUrl('data/models/') //设置材质路径
+MTLLoader.setPath('data/models/') //设置mtl文件路径
 MTLLoader.load('monu1.mtl', function (materials) {
     var OBJLoader = new THREE.OBJLoader()
     materials.preload()
     OBJLoader.setMaterials(materials) // 设置三维对象材质库
-    OBJLoader.setPath('../data/models/') // 设置obj文件所在目录
+    OBJLoader.setPath('data/models/') // 设置obj文件所在目录
     OBJLoader.load('monu1.obj', function (obj) {
         obj.traverse(function (child) {
             child.material.side = THREE.DoubleSide // 设置贴图模式为双面贴图
