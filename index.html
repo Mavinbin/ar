@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="css/style.css">
 <!-- include aframe -->
 <script src="js/aframe.min.js"></script>
 <!-- include aframe-ar.js -->
@@ -11,18 +12,24 @@
             <a-asset-item id="airplane_asset_mtl" src="data/models/FREOBJ.mtl"></a-asset-item> -->
             <!-- <a-asset-item id="building_obj" src="data/models/monu1.obj"></a-asset-item>
             <a-asset-item id="building_mtl" src="data/models/monu1.mtl"></a-asset-item> -->
-            <a-asset-item id="chr_knight_obj" src="data/models/chr_knight.obj"></a-asset-item>
-            <a-asset-item id="chr_knight_mtl" src="data/models/chr_knight.mtl"></a-asset-item>
+            <!-- <a-asset-item id="chr_knight_obj" src="data/models/chr_knight.obj"></a-asset-item>
+            <a-asset-item id="chr_knight_mtl" src="data/models/chr_knight.mtl"></a-asset-item> -->
+            <a-asset-item id="8x8x8_obj" src="data/models/8x8x8.obj"></a-asset-item>
+            <a-asset-item id="8x8x8_mtl" src="data/models/8x8x8.mtl"></a-asset-item>
         </a-assets>
 
         <a-marker preset="custom" type="pattern" url="data/markers/lion.patt">
             <!-- <a-entity obj-model="obj: #building_obj; mtl: #building_mtl" scale="0.02 0.02 0.02"></a-entity> -->
-            <a-entity obj-model="obj: #chr_knight_obj; mtl: #chr_knight_mtl" scale="0.5 0.5 0.5"></a-entity>
+            <a-entity obj-model="obj: #8x8x8_obj; mtl: #8x8x8_mtl" scale="0.5 0.5 0.5"></a-entity>
             <a-entity light="type: hemisphere; color: #fefddd; groundColor: #fefddd; intensity: 1.2"></a-entity>
         </a-marker>
 
         <a-entity camera></a-entity>
     </a-scene>
+    <div class="operations">
+        <a class="btn-zoomout">缩小</a>
+        <a class="btn-zoomin">扩大</a>
+    </div>
     <script>
 
     </script>
