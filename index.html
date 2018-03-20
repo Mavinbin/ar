@@ -13,12 +13,13 @@
             <a-asset-item id="building_mtl" src="data/models/monu1.mtl"></a-asset-item>
         </a-assets>
 
-        <a-entity obj-model="obj: #building_obj; mtl: #building_mtl" scale="0.02 0.02 0.02"></a-entity>
-        <a-entity obj-model="obj: #airplane_asset_obj; mtl: #airplane_asset_mtl"></a-entity>
         <a-marker preset="custom" type="pattern" url="data/markers/lion.patt">
+            <a-entity obj-model="obj: #building_obj; mtl: #building_mtl" scale="0.02 0.02 0.02"></a-entity>
+            <a-entity obj-model="obj: #airplane_asset_obj; mtl: #airplane_asset_mtl"></a-entity>
             <a-entity light="type: hemisphere; color: #fefddd; groundColor: #fefddd; intensity: 1.2"></a-entity>
         </a-marker>
-        <!-- <a-entity camera look-controls wasd-controls zoom="0.01"></a-entity> -->
+
+        <a-entity camera></a-entity>
     </a-scene>
     <script>
 
