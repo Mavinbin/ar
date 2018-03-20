@@ -4,24 +4,23 @@
 <!-- include aframe-ar.js -->
 <script src="js/aframe-ar.min.js"></script>
 
-<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
-    <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
-        <!-- enable artoolkit on this scene -->
-        <a-scene stats embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+<body>
+    <a-scene stats embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
-            <a-assets>
-                <a-asset-item id="airplane_asset_mtl" src="data/models/FREOBJ.mtl"></a-asset-item>
-                <a-asset-item id="airplane_asset_obj" src="data/models/FREOBJ.obj"></a-asset-item>
-                <a-asset-item id="building_mtl" src="data/models/monu1.mtl"></a-asset-item>
-                <a-asset-item id="building_obj" src="data/models/monu1.obj"></a-asset-item>
-            </a-assets>
+        <a-assets>
+            <a-asset-item id="airplane_asset_mtl" src="data/models/FREOBJ.mtl"></a-asset-item>
+            <a-asset-item id="airplane_asset_obj" src="data/models/FREOBJ.obj"></a-asset-item>
+            <a-asset-item id="building_mtl" src="data/models/monu1.mtl"></a-asset-item>
+            <a-asset-item id="building_obj" src="data/models/monu1.obj"></a-asset-item>
+        </a-assets>
 
-            <a-marker preset="patt" patterUrl="data/markers/patt.hiro" url="data/markers/patt.hiro">
-                <a-entity light="type: hemisphere; color: #fefddd; groundColor: #fefddd; intensity: 1.2"></a-entity>
-            </a-marker>
+        <a-marker preset="patt" url="data/markers/patt.hiro">
+            <a-entity light="type: hemisphere; color: #fefddd; groundColor: #fefddd; intensity: 1.2"></a-entity>
+        </a-marker>
 
-            <a-entity camera></a-entity>
-        </a-scene>
+        <a-entity camera></a-entity>
+    </a-scene>
+
 </body>
 
 </html>
