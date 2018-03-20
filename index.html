@@ -5,7 +5,7 @@
 <script src="js/aframe-ar.min.js"></script>
 
 <body>
-    <a-scene stats embedded arjs='sourceType: webcam;'>
+    <a-scene stats embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
         <a-assets>
             <a-asset-item id="airplane_asset_obj" src="data/models/FREOBJ.obj"></a-asset-item>
             <a-asset-item id="airplane_asset_mtl" src="data/models/FREOBJ.mtl"></a-asset-item>
@@ -14,9 +14,8 @@
         </a-assets>
 
         <a-entity obj-model="obj: #airplane_asset_obj; mtl: #building_mtl"></a-entity>
-        <a-entity light="type: hemisphere; color: #fefddd; groundColor: #fefddd; intensity: 1.2"></a-entity>
         <a-marker preset="custom" type="pattern" url="data/markers/lion.patt">
-            <!-- <a-entity light="type: hemisphere; color: #fefddd; groundColor: #fefddd; intensity: 1.2"></a-entity> -->
+            <a-entity light="type: hemisphere; color: #fefddd; groundColor: #fefddd; intensity: 1.2"></a-entity>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
