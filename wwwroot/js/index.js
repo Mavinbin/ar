@@ -10,7 +10,7 @@ $(function () {
     // 获取模型数据
     app.getData = function (cb) {
         $.ajax({
-            url: '../data/data/models.json',
+            url: '../wwwroot/data/data/models.json',
             type: 'GET',
             dataType: 'json',
             success: function (res) {
