@@ -1,0 +1,128 @@
+[
+    {
+        "id": 0,
+        "title": "3x3x3",
+        "obj": "3x3x3_obj",
+        "mtl": "3x3x3_mtl",
+        "scale": "0.333 0.333 0.333"
+    },
+    {
+        "id": 1,
+        "title": "8x8x8",
+        "obj": "8x8x8_obj",
+        "mtl": "8x8x8_mtl",
+        "scale": "0.125 0.125 0.125"
+    },
+    {
+        "id": 2,
+        "title": "castle",
+        "obj": "castle_obj",
+        "mtl": "castle_mtl",
+        "scale": "0.05 0.05 0.05"
+    },
+    {
+        "id": 3,
+        "title": "chr_fox",
+        "obj": "chr_fox_obj",
+        "mtl": "chr_fox_mtl",
+        "scale": "0.05 0.05 0.05"
+    },
+    {
+        "id": 4,
+        "title": "chr_gumi",
+        "obj": "chr_gumi_obj",
+        "mtl": "chr_gumi_mtl",
+        "scale": "0.05 0.05 0.05"
+    },
+    {
+        "id": 5,
+        "title": "chr_knight",
+        "obj": "chr_knight_obj",
+        "mtl": "chr_knight_mtl",
+        "scale": "0.05 0.05 0.05"
+    },
+    {
+        "id": 6,
+        "title": "chr_man",
+        "obj": "chr_man_obj",
+        "mtl": "chr_man_mtl",
+        "scale": "0.05 0.05 0.05"
+    },
+    {
+        "id": 7,
+        "title": "chr_old",
+        "obj": "chr_old_obj",
+        "mtl": "chr_old_mtl",
+        "scale": "0.05 0.05 0.05"
+    },
+    {
+        "id": 8,
+        "title": "chr_poem",
+        "obj": "chr_poem_obj",
+        "mtl": "chr_poem_mtl",
+        "scale": "0.05 0.05 0.05"
+    },
+    {
+        "id": 9,
+        "title": "chr_rain",
+        "obj": "chr_rain_obj",
+        "mtl": "chr_rain_mtl",
+        "scale": "0.05 0.05 0.05"
+    },
+    {
+        "id": 10,
+        "title": "chr_sword",
+        "obj": "chr_sword_obj",
+        "mtl": "chr_sword_mtl",
+        "scale": "0.05 0.05 0.05"
+    },
+    {
+        "id": 11,
+        "title": "doom",
+        "obj": "doom_obj",
+        "mtl": "doom_mtl",
+        "scale": "0.01 0.01 0.01"
+    },
+    {
+        "id": 12,
+        "title": "ephtracy",
+        "obj": "ephtracy_obj",
+        "mtl": "ephtracy_mtl",
+        "scale": "0.03 0.03 0.03"
+    },
+    {
+        "id": 13,
+        "title": "monu1",
+        "obj": "monu1_obj",
+        "mtl": "monu1_mtl",
+        "scale": "0.01 0.01 0.01"
+    },
+    {
+        "id": 14,
+        "title": "monu9",
+        "obj": "monu9_obj",
+        "mtl": "monu9_mtl",
+        "scale": "0.01 0.01 0.01"
+    },
+    {
+        "id": 15,
+        "title": "monu10",
+        "obj": "monu10_obj",
+        "mtl": "monu10_mtl",
+        "scale": "0.01 0.01 0.01"
+    },
+    {
+        "id": 16,
+        "title": "shelf",
+        "obj": "shelf_obj",
+        "mtl": "shelf_mtl",
+        "scale": "0.02 0.02 0.02"
+    },
+    {
+        "id": 17,
+        "title": "teapot",
+        "obj": "teapot_obj",
+        "mtl": "teapot_mtl",
+        "scale": "0.01 0.01 0.01"
+    }
+]

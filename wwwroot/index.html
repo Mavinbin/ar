@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/aframe.min.js"></script>
+<script src="js/aframe-ar.min.js"></script>
+
+<body>
+    <a-scene stats id="scene">
+        <a-assets>
+            <a-asset-item id="3x3x3_obj" src="data/models/3x3x3.obj"></a-asset-item>
+            <a-asset-item id="3x3x3_mtl" src="data/models/3x3x3.mtl"></a-asset-item>
+            <a-asset-item id="8x8x8_obj" src="data/models/8x8x8.obj"></a-asset-item>
+            <a-asset-item id="8x8x8_mtl" src="data/models/8x8x8.mtl"></a-asset-item>
+            <a-asset-item id="castle_obj" src="data/models/castle.obj"></a-asset-item>
+            <a-asset-item id="castle_mtl" src="data/models/castle.mtl"></a-asset-item>
+            <a-asset-item id="chr_fox_obj" src="data/models/chr_fox.obj"></a-asset-item>
+            <a-asset-item id="chr_fox_mtl" src="data/models/chr_fox.mtl"></a-asset-item>
+            <a-asset-item id="chr_gumi_obj" src="data/models/chr_gumi.obj"></a-asset-item>
+            <a-asset-item id="chr_gumi_mtl" src="data/models/chr_gumi.mtl"></a-asset-item>
+            <a-asset-item id="chr_knight_obj" src="data/models/chr_knight.obj"></a-asset-item>
+            <a-asset-item id="chr_knight_mtl" src="data/models/chr_knight.mtl"></a-asset-item>
+            <a-asset-item id="chr_man_obj" src="data/models/chr_man.obj"></a-asset-item>
+            <a-asset-item id="chr_man_mtl" src="data/models/chr_man.mtl"></a-asset-item>
+            <a-asset-item id="chr_old_obj" src="data/models/chr_old.obj"></a-asset-item>
+            <a-asset-item id="chr_old_mtl" src="data/models/chr_old.mtl"></a-asset-item>
+            <a-asset-item id="chr_poem_obj" src="data/models/chr_poem.obj"></a-asset-item>
+            <a-asset-item id="chr_poem_mtl" src="data/models/chr_poem.mtl"></a-asset-item>
+            <a-asset-item id="chr_rain_obj" src="data/models/chr_rain.obj"></a-asset-item>
+            <a-asset-item id="chr_rain_mtl" src="data/models/chr_rain.mtl"></a-asset-item>
+            <a-asset-item id="chr_sword_obj" src="data/models/chr_sword.obj"></a-asset-item>
+            <a-asset-item id="chr_sword_mtl" src="data/models/chr_sword.mtl"></a-asset-item>
+            <a-asset-item id="doom_obj" src="data/models/doom.obj"></a-asset-item>
+            <a-asset-item id="doom_mtl" src="data/models/doom.mtl"></a-asset-item>
+            <a-asset-item id="ephtracy_obj" src="data/models/ephtracy.obj"></a-asset-item>
+            <a-asset-item id="ephtracy_mtl" src="data/models/ephtracy.mtl"></a-asset-item>
+            <a-asset-item id="monu1_obj" src="data/models/monu1.obj"></a-asset-item>
+            <a-asset-item id="monu1_mtl" src="data/models/monu1.mtl"></a-asset-item>
+            <a-asset-item id="monu9_obj" src="data/models/monu9.obj"></a-asset-item>
+            <a-asset-item id="monu9_mtl" src="data/models/monu9.mtl"></a-asset-item>
+            <a-asset-item id="monu10_obj" src="data/models/monu10.obj"></a-asset-item>
+            <a-asset-item id="monu10_mtl" src="data/models/monu10.mtl"></a-asset-item>
+            <a-asset-item id="shelf_obj" src="data/models/shelf.obj"></a-asset-item>
+            <a-asset-item id="shelf_mtl" src="data/models/shelf.mtl"></a-asset-item>
+            <a-asset-item id="teapot_obj" src="data/models/teapot.obj"></a-asset-item>
+            <a-asset-item id="teapot_mtl" src="data/models/teapot.mtl"></a-asset-item>
+        </a-assets>
+
+        <!-- <a-entity light="type: hemisphere; color: #bbb; groundColor: #bbb; intensity: 1.2;"></a-entity> -->
+        <a-marker preset="custom" type="pattern" url="data/markers/lion.patt" id="marker">
+            <!-- <a-entity obj-model="obj: #8x8x8_obj; mtl: #8x8x8_mtl" scale="0.5 0.5 0.5"></a-entity> -->
+            <a-entity light="type: hemisphere; color: #fefddd; groundColor: #fefddd; intensity: 1.2"></a-entity>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    </a-scene>
+    <div class="ft-panel">
+        <div class="obj-name" id="objName"></div>
+        <div class="operations">
+            <a href="javascript:;" class="btn-prev" id="btnPrev">上一个</a>
+            <a href="javascript:;" class="btn-next" id="btnNext">下一个</a>
+            <a href="javascript:;" class="btn-rotate" id="btnRotate">旋转</a>
+            <a href="javascript:;" class="btn-zoomin" id="btnZoomIn">扩大</a>
+            <a href="javascript:;" class="btn-zoomout" id="btnZoomOut">缩小</a>
+        </div>
+    </div>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
