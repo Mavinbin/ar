@@ -65,9 +65,9 @@ $(function () {
         $btnZoomIn.on('click', function () {
             var scales = app.state.currObj.attr('scale')
 
-            scales.x += 0.1
-            scales.y += 0.1
-            scales.z += 0.1
+            scales.x += 0.01
+            scales.y += 0.01
+            scales.z += 0.01
 
             app.state.currObj.attr('scale', [scales.x, scales.y, scales.z].join(' '))
         })
@@ -76,13 +76,13 @@ $(function () {
         $btnZoomOut.on('click', function () {
             var scales = app.state.currObj.attr('scale')
 
-            scales.x -= 0.1
-            scales.y -= 0.1
-            scales.z -= 0.1
+            scales.x -= 0.01
+            scales.y -= 0.01
+            scales.z -= 0.01
 
-            scales.x = scales.x <= 0 ? 0 : scales.x
-            scales.y = scales.y <= 0 ? 0 : scales.y
-            scales.z = scales.z <= 0 ? 0 : scales.z
+            scales.x = scales.x <= 0 ? 0.01 : scales.x
+            scales.y = scales.y <= 0 ? 0.01 : scales.y
+            scales.z = scales.z <= 0 ? 0.01 : scales.z
 
             app.state.currObj.attr('scale', [scales.x, scales.y, scales.z].join(' '))
         })
