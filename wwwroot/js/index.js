@@ -1,16 +1,52 @@
+registerAframeClickDragComponent(window.AFRAME);
 $(function () {
     var app = {}
 
     app.state = {
         currIndex: 0,
         data: [],
-        currObj: []
+        currObj: [],
+        currObjProgress: 0,
+        currMtlProgress: 0
+    }
+
+    // toast提示
+    app.toast = function (msg) {
+        var $toast = $('#toast'),
+            timer = null
+
+        if (msg) {
+            if ($toast.length) {
+                $toast.hide()
+                $toast.find('.msg').html(msg)
+                $toast.show()
+            } else {
+                var html = '<div class="toast" id="toast">'
+                html += '<div class="toast-inner">'
+                html += '<span class="msg">' + msg + '</span>'
+                html += '</div>'
+                html += '</div>'
+
+                $('body').append(html)
+                $toast = $('#toast')
+            }
+
+            var timer = setTimeout(function () {
+                $toast.hide()
+                clearTimeout(timer)
+            }, 2000);
+        }
+    }
+
+    // 隐藏toast
+    app.toast.hide = function () {
+        $('#toast').hide()
     }
 
     // 获取模型数据
     app.getData = function (cb) {
         $.ajax({
-            url: '../wwwroot/data/data/models.json',
+            url: '../data/data/models.json',
             type: 'GET',
             dataType: 'json',
             success: function (res) {
@@ -33,13 +69,17 @@ $(function () {
             $btnZoomIn = $('#btnZoomIn'),
             $btnZoomOut = $('#btnZoomOut')
 
+        // 阻止冒泡，避免点击按钮影响拖拽事件
+        $('.ft-panel').on('click', function (e) {
+            e.stopPropagation()
+        })
 
         // 渲染前一个模型
         $btnPrev.on('click', function () {
             if (app.state.currIndex <= 0) {
                 app.state.currIndex = app.state.data.length - 1
             } else {
-                app.state.currIndex --
+                app.state.currIndex--
             }
 
             app.switchObj()
@@ -50,7 +90,7 @@ $(function () {
             if (app.state.currIndex >= app.state.data.length - 1) {
                 app.state.currIndex = 0
             } else {
-                app.state.currIndex ++
+                app.state.currIndex++
             }
 
             app.switchObj()
@@ -88,9 +128,48 @@ $(function () {
         })
     }
 
+    // 添加asset
+    app.createAsset = function (data) {
+        var $asset = $('#' + data.title + '_obj'),
+            html = ''
+
+        if (!$asset.length) {
+            html += '<a-asset-item id="' + data.title + '_obj" src="data/models/' + data.title + '.obj"></a-asset-item>'
+            html += '<a-asset-item id="' + data.title + '_mtl" src="data/models/' + data.title + '.mtl"></a-asset-item>'
+            $('a-assets').append($(html))
+
+            app.toast('loading...')
+
+            $('#' + data.title + '_obj').on('progress', function (res) {
+                var detail = res.originalEvent.detail,
+                    progress = Math.floor(detail.loadedBytes / detail.totalBytes) * 100
+
+                app.state.currObjProgress = progress
+
+                if (app.state.currObjProgress + app.state.currMtlProgress >= 100) {
+                    app.toast.hide()
+                } else {
+                    app.toast('loading...')
+                }
+            })
+
+            $('#' + data.title + '_mtl').on('progress', function (res) {
+                var detail = res.originalEvent.detail,
+                    progress = Math.floor(detail.loadedBytes / detail.totalBytes) * 100
+
+                app.state.currMtlProgress = progress
+                app.toast('loading...')
+
+                if (app.state.currObjProgress + app.state.currMtlProgress >= 100) {
+                    app.toast.hide()
+                }
+            })
+        }
+    }
+
     // 创建实体
     app.createEntity = function (data) {
-        var html = '<a-entity id="obj_' + data.id + '" side="dobule" scale="' + data.scale + '" obj-model="obj: #' + data.obj + '; mtl: #' + data.mtl + '"></a-entity>'
+        var html = '<a-entity id="obj_' + data.id + '" side="dobule" scale="' + data.scale + '" obj-model="obj: #' + data.obj + '; mtl: #' + data.mtl + '" click-drag></a-entity>'
 
         return $(html)
     }
@@ -100,7 +179,9 @@ $(function () {
         var html = '<a-animation attribute="rotation" begin="rotate" end="endRotate" dur="5000" fill="forwards" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>'
 
         $entity.append($(html))
-
+        $entity.on('click', function () {
+            console.log('我被点击了~')
+        })
         return $entity
     }
 
@@ -109,13 +190,15 @@ $(function () {
         var data = app.state.data[app.state.currIndex],
             $entity = $('#obj_' + data.id)
 
-        $('a-entity[id^="obj_"]').attr('visible', 'false')
+        $('a-entity[id^="obj_"]').attr('visible', false)
+        app.createAsset(data)
         if ($entity.length) {
-            $entity.attr('visible', 'true')
+            $entity.attr('visible', true)
         } else {
             $entity = app.createEntity(data)
             $entity = app.createAnimation($entity)
-            $('#marker').append($entity)
+            $('#scene').append($entity)
+            // $('#marker').append($entity)
         }
 
         if (app.state.currObj[0]) {

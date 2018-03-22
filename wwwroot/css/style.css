@@ -91,3 +91,25 @@ em, i {
 .a-enter-vr {
     display: none;
 }
+
+.toast {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+
+.toast-inner {
+    max-width: 300px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+}
