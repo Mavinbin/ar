@@ -180,7 +180,7 @@ $(function () {
 
         $entity.append($(html))
         $entity.on('click', function () {
-            console.log('我被点击了~')
+            alert('我被点击了~')
         })
         return $entity
     }
@@ -197,8 +197,8 @@ $(function () {
         } else {
             $entity = app.createEntity(data)
             $entity = app.createAnimation($entity)
-            $('#scene').append($entity)
-            // $('#marker').append($entity)
+            // $('#scene').append($entity)
+            $('#marker').append($entity)
         }
 
         if (app.state.currObj[0]) {
