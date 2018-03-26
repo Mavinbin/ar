@@ -1,4 +1,4 @@
-// registerAframeClickDragComponent(window.AFRAME);
+registerAframeClickDragComponent(window.AFRAME);
 $(function () {
     var app = {}
 
